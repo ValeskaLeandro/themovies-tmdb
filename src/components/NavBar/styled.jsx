@@ -73,6 +73,7 @@ export const Ul = styled.ul`
       top: 0;
       right: -100%;
       align-items: baseline;
+      z-index: 3;
 
       background-color:  var(--dark-blue); 
       align-items: center;
@@ -116,9 +117,11 @@ export const IconMenuMobile = styled.div`
   & {
     display: none;
   }
+
   @media (max-width: 950px){
     & {
       display: block;
+      z-index: 4;
     }
 
     svg {

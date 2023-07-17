@@ -39,10 +39,10 @@ const NavBar = () => {
       </Logo>
       <div className="container">
         <Ul className={`${ isMobile && openMenu ? "open-menu" : "close-menu" }`} onClick={isMobile ? () => setOpenMenu(!openMenu) : undefined} >
-          <li><Link to="#best">Melhores</Link></li>
-          <li><Link to="#best">Populares</Link></li>
-          <li><Link to="#best">Recentes</Link></li>
-          <li><Link to="#best">Em Cartaz</Link></li>        
+          <li><a href="#best">Melhores</a></li>
+          <li><a href="#popular">Populares</a></li>
+          <li><a href="#upcoming">Recentes</a></li>
+          <li><a href="#nowplaying">Em Cartaz</a></li>        
         </Ul>
         <ButtonSearch onClick={() => setOpenSearch(!openSearch)}>
             <BiSearchAlt2 />          
