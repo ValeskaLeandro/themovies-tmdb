@@ -52,7 +52,7 @@ const Movie = () => {
                 </div>            
                   
                 <MovieGenres>
-                  {movie.genres.map((genre) => <Link to={`genre/${genre.id}`} key={genre.id}>{genre.name}</Link>)}
+                  {movie.genres.map((genre) => <Link to={`/genre/${genre.id}/${genre.name}`} key={genre.id}>{genre.name}</Link>)}
                 </MovieGenres>
                 
                 <div className="description">
