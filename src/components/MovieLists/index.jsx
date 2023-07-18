@@ -4,7 +4,6 @@ import Card from "../Card"
 
 import { Swiper, SwiperSlide } from "swiper/react"
 import "swiper/css"
-import "swiper/css/navigation"
 
 import { settings } from "../../utils/settings"
 import { Container } from "./styled"
@@ -19,7 +18,7 @@ const MovieLists = ({url, title, id}) => {
     setMovies(data.results)
   }
 
-  useEffect(() => {getMovies(url)})
+  useEffect(() => {getMovies(url)}, [url])
 
   return(
     <Container id={id}>
@@ -28,7 +27,6 @@ const MovieLists = ({url, title, id}) => {
       >
          {movies.length > 0 && movies.map((movie) => (
           <SwiperSlide key={movie.id}>
-            {console.log(movie)}
             <Card movie={movie} />
           </SwiperSlide>
           ))}
