@@ -1,27 +1,19 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { useParams } from "react-router-dom"
 import Card from "../../components/Card"
 import {GenrePage, ContainerMovies, Buttons} from "./styled"
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
+//variables
 import {genreURL, apiKey, language} from "../../utils/variables"
-
+//hooks
+import useFetchMovies from "../../hooks/useFetchMovies"
 
 const Genre = () => {
   const {id, name} = useParams()
-  const [movies, setMovies] = useState(null)
   const [page, setPage] = useState(1)
   const searchWithGenreURL = `${genreURL}?${apiKey}&${language}&with_genres=${id}&page=${page}`
-
-  const getMovie = async (url) => {
-    const res = await fetch(url)
-    const data = await res.json()
-    
-    setMovies(data.results)
-  }
-
-  useEffect(() => {
-    getMovie(searchWithGenreURL)
-  }, [searchWithGenreURL])
+  
+  const movies = useFetchMovies(searchWithGenreURL)
 
   return(
     <GenrePage>

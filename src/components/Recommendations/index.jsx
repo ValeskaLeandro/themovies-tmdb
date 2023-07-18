@@ -1,25 +1,19 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useState } from "react"
 import { RecommendationsContainer } from "./styled"
-
-import { settings } from "../../utils/settings"
+//components
 import Card from "../Card"
+//Slides
 import { Swiper, SwiperSlide } from "swiper/react"
 import "swiper/css"
+//Variables
 import { moviesURL, apiKey, language } from "../../utils/variables"
+import { settings } from "../../utils/settings"
+//Hooks
+import useFetchMovies from "../../hooks/useFetchMovies"
 
 const Recommendations = ({id}) => {
-  const [recommendations, setRecommendations] = useState([])
   const recomendationURL = `${moviesURL}${id}/recommendations?${apiKey}&${language}`
-
-  const getMovies = async (url) => {
-    const res = await fetch(url)
-    const data = await res.json()
-
-    setRecommendations(data.results)
-  }
-
-  useEffect(() => {getMovies(recomendationURL)}, [recomendationURL])
+  const recommendations = useFetchMovies(recomendationURL)
 
   return(
     <RecommendationsContainer>

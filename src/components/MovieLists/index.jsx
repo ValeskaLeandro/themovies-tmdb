@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useState } from "react"
 import Card from "../Card"
 
 import { Swiper, SwiperSlide } from "swiper/react"
@@ -7,18 +6,9 @@ import "swiper/css"
 
 import { settings } from "../../utils/settings"
 import { Container } from "./styled"
-
+import useFetchMovies from "../../hooks/useFetchMovies"
 const MovieLists = ({url, title, id}) => {
-  const [movies, setMovies] = useState([])
-  
-  const getMovies = async (url) => {
-    const res = await fetch(url)
-    const data = await res.json()
-
-    setMovies(data.results)
-  }
-
-  useEffect(() => {getMovies(url)}, [url])
+  const movies = useFetchMovies(url)
 
   return(
     <Container id={id}>
