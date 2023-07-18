@@ -39,10 +39,10 @@ const NavBar = () => {
       </Logo>
       <div className="container">
         <Ul className={`${ isMobile && openMenu ? "open-menu" : "close-menu" }`} onClick={isMobile ? () => setOpenMenu(!openMenu) : undefined} >
-          <li><a href="#best">Melhores</a></li>
-          <li><a href="#popular">Populares</a></li>
-          <li><a href="#upcoming">Recentes</a></li>
-          <li><a href="#nowplaying">Em Cartaz</a></li>        
+          <li><Link to="/">Melhores</Link></li>
+          <li><Link to="/">Populares</Link></li>
+          <li><Link to="/">Recentes</Link></li>
+          <li><Link to="/">Em Cartaz</Link></li>     
         </Ul>
         <ButtonSearch onClick={() => setOpenSearch(!openSearch)}>
             <BiSearchAlt2 />          
@@ -53,7 +53,7 @@ const NavBar = () => {
       </IconMenuMobile>
       </div> 
     </Header>
-    <InputSearch onSubmit={handleSubmit} className={`${openSearch ? "open-search" : "close-search" }`}>
+    <InputSearch onSubmit={handleSubmit} className={`${openSearch ? "open-search" : "" }`}>
       <input type="text" placeholder="Busque um filme" value={search}
           onChange={(e) => setSearch(e.target.value)} />
     </InputSearch>

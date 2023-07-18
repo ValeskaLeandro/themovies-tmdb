@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 //pages
 import Home from './pages/Home/index.jsx'
+import Search from './pages/Search/index.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -13,6 +14,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Routes>
         <Route element={<App />}>
           <Route path='/' element={<Home />} />
+          <Route path='search' element={<Search />} />
         </Route>
       </Routes>
     </BrowserRouter>
