@@ -3,11 +3,7 @@ import { Link, useParams } from "react-router-dom"
 import { BsGraphUp, BsWallet2, BsHourglassSplit } from "react-icons/bs"
 import { MoviePage, MoviePageContent, MovieAverage, MovieGenres, Curiosities, TitleMovie } from "./styled"
 import Recommendations from "../../components/Recommendations"
-
-const moviesURL = import.meta.env.VITE_API
-const apiKey = import.meta.env.VITE_API_KEY
-const imageURL = import.meta.env.VITE_IMG
-const language = "language=pt-BR"
+import {moviesURL, imageURL, apiKey, language} from "../../utils/variables"
 
 const Movie = () => {
   const {id} = useParams()

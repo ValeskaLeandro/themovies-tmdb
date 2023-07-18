@@ -6,10 +6,7 @@ import { settings } from "../../utils/settings"
 import Card from "../Card"
 import { Swiper, SwiperSlide } from "swiper/react"
 import "swiper/css"
-
-const moviesURL = import.meta.env.VITE_API
-const apiKey = import.meta.env.VITE_API_KEY
-const language = "language=pt-BR"
+import { moviesURL, apiKey, language } from "../../utils/variables"
 
 const Recommendations = ({id}) => {
   const [recommendations, setRecommendations] = useState([])

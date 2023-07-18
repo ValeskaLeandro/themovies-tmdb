@@ -2,9 +2,7 @@ import { useEffect, useState } from "react"
 import { useSearchParams } from "react-router-dom"
 import Card from "../../components/Card"
 import { ContainerMovies, SearchPage } from "./styled"
-
-const searchURL = import.meta.env.VITE_SEARCH
-const apiKey = import.meta.env.VITE_API_KEY
+import { searchURL, apiKey} from "../../utils/variables"
 
 const Search = () => {
   const [searchParams] = useSearchParams()

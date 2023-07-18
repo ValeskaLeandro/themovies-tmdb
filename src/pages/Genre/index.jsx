@@ -3,10 +3,8 @@ import { useParams } from "react-router-dom"
 import Card from "../../components/Card"
 import {GenrePage, ContainerMovies, Buttons} from "./styled"
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
+import {genreURL, apiKey, language} from "../../utils/variables"
 
-const genreURL = import.meta.env.VITE_SEARCH_GENRE
-const apiKey = import.meta.env.VITE_API_KEY
-const language = "language=pt-BR"
 
 const Genre = () => {
   const {id, name} = useParams()
