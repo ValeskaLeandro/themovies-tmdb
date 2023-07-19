@@ -15,6 +15,7 @@ const MovieLists = ({url, title, id}) => {
       <h2 className="title">{title}</h2>      
       <Swiper {...settings}
       >
+        {movies.length === 0 && <p>Carregando...</p>}
          {movies.length > 0 && movies.map((movie) => (
           <SwiperSlide key={movie.id}>
             <Card movie={movie} />
