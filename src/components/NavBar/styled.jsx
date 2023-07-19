@@ -7,7 +7,7 @@ export const Header = styled.header`
   justify-content: space-around;
   align-items: center;
   border-bottom: 1px solid var(--ligth-blue);
-  box-shadow: 0px 5px 15px -6px rgba(1,180,228,1);
+  box-shadow: 0px 5px 5px -5px rgba(1,180,228,1);
 
   .container {
     display: flex;
@@ -60,7 +60,6 @@ export const Ul = styled.ul`
 
   a:hover {
     color: var(--ligth-green);
-    border-bottom: 2px solid var(--ligth-green);
   }
 
   a.active {
@@ -90,13 +89,9 @@ export const Ul = styled.ul`
       padding: 1rem;
       transition: all .5s ease-in-out;
     }
-    li:hover {
-      border-bottom: 2px solid #fafafa;
-    }
 
     a:hover {
       color: #fafafa;
-      border-bottom: none;
     }
 
     &.open-menu {
