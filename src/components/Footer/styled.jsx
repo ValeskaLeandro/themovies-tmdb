@@ -18,5 +18,8 @@ export const FooterContainer = styled.footer`
   img {
     width: 5rem;
   }
+  @media (max-width: 900px) {
+    font-size: .8rem;
+  }  
 
 `

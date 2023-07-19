@@ -12,6 +12,9 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
   color: #fafafa;
+}
+
+body {
   background-color: var(--dark-blue);
 }
 

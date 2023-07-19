@@ -1,6 +1,7 @@
 import MovieLists from "../../components/MovieLists"
 import { HomeContainer } from "./styled"
 import {moviesURL, apiKey, language} from "../../utils/variables"
+import MainBanner from "../../components/MainBanner"
 
 const Home = () => {
   const topRaterURL = `${moviesURL}top_rated?${apiKey}&${language}`
@@ -10,6 +11,7 @@ const Home = () => {
   
   return(
     <HomeContainer>
+      <MainBanner />
       <MovieLists url={topRaterURL} title="Melhores Filmes" id="best"/>
       <MovieLists url={popularMoviesURL} title="Filmes populares" id="popular"/>
       <MovieLists url={upcomingMoviesURL} title="Lançamentos recentes" id="upcoming"/>

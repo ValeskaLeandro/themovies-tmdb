@@ -32,6 +32,7 @@ export const Buttons = styled.div`
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
+    background: none;
   }
 `
 export const ContainerMovies = styled.div`

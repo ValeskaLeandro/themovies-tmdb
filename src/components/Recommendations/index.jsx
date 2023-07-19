@@ -17,7 +17,7 @@ const Recommendations = ({id}) => {
 
   return(
     <RecommendationsContainer>
-      
+      {recommendations.length === 0 && <p>Carregando...</p>}
       {recommendations.length > 0 && (
         <>
           <h1>Recomendações:</h1>
