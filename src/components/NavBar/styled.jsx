@@ -63,6 +63,10 @@ export const Ul = styled.ul`
     border-bottom: 2px solid var(--ligth-green);
   }
 
+  a.active {
+    color: var(--ligth-blue);
+  }
+
 
   @media (max-width: 950px){
     & {

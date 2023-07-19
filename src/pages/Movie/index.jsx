@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { Link, useParams } from "react-router-dom"
-import { BsGraphUp, BsWallet2, BsHourglassSplit } from "react-icons/bs"
+import { BsGraphUp, BsWallet2, BsHourglassSplit,BsCalendarCheck } from "react-icons/bs"
 import { MoviePage, MoviePageContent, MovieAverage, MovieGenres, Curiosities, TitleMovie } from "./styled"
 import Recommendations from "../../components/Recommendations"
 import {moviesURL, imageURL, apiKey, language} from "../../utils/variables"
@@ -27,6 +27,10 @@ const Movie = () => {
       style: "currency",
       currency: "USD"
     })
+  }
+  const formatDate = (date) => {
+    const [year, month, day ] = date.split('-')  
+    return `${day}/${month}/${year}`;
   }
   return(
     <>
@@ -55,7 +59,12 @@ const Movie = () => {
                   <p>Descrição: <span>{movie.overview}</span></p>
                 </div>
                 <Curiosities>
+                  {console.log(movie)}
                   <TitleMovie>Curiosidades</TitleMovie>
+                  <div className="info">
+                    <h3><BsCalendarCheck /> Data de lançamento:</h3>
+                    <p>{formatDate(movie.release_date)}</p>
+                  </div>
                   <div className="info">
                     <h3><BsWallet2 /> Orçamento:</h3>
                     <p>{formatCurrency(movie.budget)}</p>

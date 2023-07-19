@@ -1,5 +1,5 @@
 import { Header, Logo, Ul, IconMenuMobile, ButtonSearch, InputSearch} from "./styled"
-import {Link, useNavigate} from "react-router-dom"
+import {Link, NavLink, useNavigate} from "react-router-dom"
 import { BiCameraMovie, BiSearchAlt2, BiMenu, BiX} from "react-icons/bi"
 import { useEffect, useState } from "react"
 
@@ -40,10 +40,10 @@ const NavBar = () => {
       </Logo>
       <div className="container">
         <Ul className={`${ isMobile && openMenu ? "open-menu" : "close-menu" }`} onClick={isMobile ? () => setOpenMenu(!openMenu) : undefined} >
-          <li><Link to="/">Melhores</Link></li>
-          <li><Link to="/">Populares</Link></li>
-          <li><Link to="/">Recentes</Link></li>
-          <li><Link to="/">Em Cartaz</Link></li>     
+          <li><NavLink to="movies/top_rated">Melhores</NavLink></li>
+          <li><NavLink to="movies/popular">Populares</NavLink></li>
+          <li><NavLink to="movies/upcoming">Recentes</NavLink></li>
+          <li><NavLink to="movies/now_playing">Em Cartaz</NavLink></li>
         </Ul>
         <ButtonSearch onClick={() => setOpenSearch(!openSearch)}>
             <BiSearchAlt2 />          
